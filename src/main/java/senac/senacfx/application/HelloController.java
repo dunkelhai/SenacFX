@@ -1,4 +1,4 @@
-package senac.senacfx;
+package senac.senacfx.application;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
