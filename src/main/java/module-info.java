@@ -6,4 +6,7 @@ module senac.senacfx {
 
     opens senac.senacfx.application to javafx.fxml;
     exports senac.senacfx.application;
+
+    exports senac.senacfx.controller;
+    opens senac.senacfx.controller to javafx.fxml;
 }
