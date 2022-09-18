@@ -1,8 +1,10 @@
 package senac.senacfx.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import senac.senacfx.gui.util.Alerts;
 
 public class ViewController {
     @FXML
@@ -17,6 +19,6 @@ public class ViewController {
     private Button bTest;
     @FXML
     public void onBtTestAction(){
-        System.out.println("Click");
+        Alerts.showAlert("ERRO", "DEU RUIM", "VAI EXPLODIR", Alert.AlertType.ERROR);
     }
 }
