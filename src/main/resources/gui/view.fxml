@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="594.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="500.0" snapToPixel="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.ViewController">
+<AnchorPane maxHeight="594.0" maxWidth="600.0" prefHeight="594.0" prefWidth="500.0" snapToPixel="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.ViewController">
    <children>
       <Label layoutX="12.0" layoutY="11.0" prefHeight="35.0" prefWidth="149.0" text="Calcular Soma">
          <font>
