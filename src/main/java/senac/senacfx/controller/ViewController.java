@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Callback;
 import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.gui.util.Constraints;
 import senac.senacfx.model.entities.Person;
@@ -61,6 +62,16 @@ public class ViewController implements Initializable {
 
         obsList = FXCollections.observableArrayList(list);
         combo1.setItems(obsList);
+
+        Callback<ListView<Person>, ListCell<Person>> factory = lv -> new ListCell<Person>() {
+            @Override
+            protected void updateItem(Person item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : item.getName());
+            }
+        };
+        combo1.setCellFactory(factory);
+        combo1.setButtonCell(factory.call(null));
 
         Constraints.setTextFieldDouble(txt1);
         Constraints.setTextFieldDouble(txt2);
