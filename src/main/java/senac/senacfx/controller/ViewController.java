@@ -31,7 +31,6 @@ public class ViewController implements Initializable {
         Person person = combo1.getSelectionModel().getSelectedItem();
         System.out.println(person);
     }
-
     @FXML
     public void onBtAllAction() {
         for(Person person : combo1.getItems()){
