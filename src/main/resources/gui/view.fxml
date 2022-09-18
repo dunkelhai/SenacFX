@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" snapToPixel="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.ViewController">
+<AnchorPane maxHeight="594.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="500.0" snapToPixel="false" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.ViewController">
    <children>
       <Label layoutX="12.0" layoutY="11.0" prefHeight="35.0" prefWidth="149.0" text="Calcular Soma">
          <font>
@@ -27,5 +28,6 @@
             <Image url="@../esdeath.jpg" />
          </image>
       </ImageView>
+      <ComboBox layoutX="8.0" layoutY="295.0" prefWidth="150.0" promptText="Select a person" />
    </children>
 </AnchorPane>

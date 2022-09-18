@@ -1,19 +1,28 @@
 package senac.senacfx.controller;
 
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.gui.util.Constraints;
+import senac.senacfx.model.entities.Person;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ViewController implements Initializable {
+
+    @FXML
+    private ComboBox<Person> combo1;
+
+    private ObservableList<Person> obsList;
+
     @FXML
     private TextField txt1;
     @FXML
@@ -21,7 +30,6 @@ public class ViewController implements Initializable {
 
     @FXML
     private Label labelResult;
-
     @FXML
     private Button btSum;
     @FXML
@@ -46,6 +54,14 @@ public class ViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<Person> list = new ArrayList<>();
+        list.add(new Person(1, "Maria", "vidaloka12@gmail.com"));
+        list.add(new Person(2, "John", "snow@gmail.com"));
+        list.add(new Person(3, "Marcos", "marcoveio@gmail.com"));
+
+        obsList = FXCollections.observableArrayList(list);
+        combo1.setItems(obsList);
+
         Constraints.setTextFieldDouble(txt1);
         Constraints.setTextFieldDouble(txt2);
         Constraints.setTextFieldMaxLength(txt1, 5);
