@@ -22,7 +22,22 @@ public class ViewController implements Initializable {
     @FXML
     private ComboBox<Person> combo1;
 
+    @FXML
+    private Button btAll;
+
     private ObservableList<Person> obsList;
+    @FXML
+    public void onComboBoxPersonAction() {
+        Person person = combo1.getSelectionModel().getSelectedItem();
+        System.out.println(person);
+    }
+
+    @FXML
+    public void onBtAllAction() {
+        for(Person person : combo1.getItems()){
+            System.out.println(person);
+        }
+    }
 
     @FXML
     private TextField txt1;

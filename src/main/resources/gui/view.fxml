@@ -27,6 +27,7 @@
             <Image url="@../esdeath.jpg" />
          </image>
       </ImageView>
-      <ComboBox fx:id="combo1" layoutX="8.0" layoutY="295.0" prefWidth="150.0" promptText="Select a person" />
+      <ComboBox fx:id="combo1" layoutX="8.0" layoutY="295.0" onAction="#onComboBoxPersonAction" prefWidth="150.0" promptText="Select a person" />
+      <Button fx:id="btAll" layoutX="209.0" layoutY="295.0" mnemonicParsing="false" onAction="#onBtAllAction" text="Todos" />
    </children>
 </AnchorPane>
