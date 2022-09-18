@@ -11,6 +11,7 @@
 
 
 <VBox prefHeight="326.0" prefWidth="513.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.DepartmentListController">
+
          <children>
             <Label text="Department Registration">
                <font>
