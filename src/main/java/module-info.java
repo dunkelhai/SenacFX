@@ -3,6 +3,7 @@ module senac.senacfx {
     requires javafx.fxml;
 
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens senac.senacfx.application to javafx.fxml;
     exports senac.senacfx.application;
