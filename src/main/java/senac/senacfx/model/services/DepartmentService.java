@@ -15,6 +15,7 @@ public class DepartmentService {
     public List<Department> findAll(){
         return dao.findAll();
 
+        
         //Dados MOCK (fake) so para testar, sem puxar do banco por hora
 //        List<Department> list = new ArrayList<>();
 //        list.add(new Department(1,"Computadores"));
