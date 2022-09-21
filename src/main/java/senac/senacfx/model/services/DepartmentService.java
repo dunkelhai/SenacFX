@@ -12,15 +12,23 @@ public class DepartmentService {
     //dependencia injetada usando padrao factory
     private DepartmentDao dao = DaoFactory.createDepartmentDao();
 
-    public List<Department> findAll(){
+    public List<Department> findAll() {
         return dao.findAll();
 
-        
         //Dados MOCK (fake) so para testar, sem puxar do banco por hora
 //        List<Department> list = new ArrayList<>();
 //        list.add(new Department(1,"Computadores"));
 //        list.add(new Department(2,"Alimentação"));
 //        list.add(new Department(3,"Financeiro"));
 //        return list;
+
     }
-}
+    public void saveOrUpdate(Department obj){
+        if (obj.getId() == null){
+            dao.insert(obj);
+        } else {
+            dao.update(obj);
+            }
+        }
+    }
+
