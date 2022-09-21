@@ -1,17 +1,21 @@
 package senac.senacfx.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import senac.senacfx.db.DbException;
+import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.gui.util.Constraints;
 import senac.senacfx.gui.util.Utils;
 import senac.senacfx.model.entities.Department;
 import senac.senacfx.model.services.DepartmentService;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class DepartmentFormController implements Initializable {
@@ -45,9 +49,22 @@ public class DepartmentFormController implements Initializable {
     }
 
     @FXML
-    public void onBtSaveAction() {
-        entity = getFormData();
-        service.saveOrUpdate(entity);
+    public void onBtSaveAction(ActionEvent event) {
+        //validacao manual pois nao esta sendo usado framework para injetar dependencia
+        if (entity == null){
+            throw new IllegalStateException("Entidade nula");
+        }
+        if (service == null){
+            throw new IllegalStateException("Servico nulo");
+        }
+
+        try {
+            entity = getFormData();
+            service.saveOrUpdate(entity);
+            Utils.currentStage(event).close();
+        } catch (DbException e){
+            Alerts.showAlert("Erro ao salvar objeto", null, e.getMessage(), Alert.AlertType.ERROR);
+        }
     }
 
     private Department getFormData() {
@@ -60,8 +77,8 @@ public class DepartmentFormController implements Initializable {
     }
 
     @FXML
-    public void onBtCancelAction() {
-        System.out.println("onBtCancelAction");
+    public void onBtCancelAction(ActionEvent event) {
+        Utils.currentStage(event).close();
     }
 
 
