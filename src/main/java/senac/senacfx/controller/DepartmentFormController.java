@@ -13,6 +13,7 @@ import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.gui.util.Constraints;
 import senac.senacfx.gui.util.Utils;
 import senac.senacfx.model.entities.Department;
+import senac.senacfx.model.exceptions.ValidationException;
 import senac.senacfx.model.services.DepartmentService;
 
 import java.net.URL;
@@ -86,8 +87,18 @@ public class DepartmentFormController implements Initializable {
     private Department getFormData() {
         Department obj = new Department();
 
+        ValidationException exception = new ValidationException("Erro na validacao");
+
         obj.setId(Utils.tryParseToInt(txtId.getText()));
+
+        if (txtName.getText() == null || txtName.getText().trim().equals("")){
+            exception.addError("name", "campo nao pode ser vazio");
+        }
         obj.setName(txtName.getText());
+
+        if (exception.getErrors().size() > 0){
+            throw exception;
+        }
 
         return obj;
     }
