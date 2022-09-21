@@ -32,7 +32,7 @@ public class DepartmentFormController implements Initializable {
     private Button btCancel;
 
     //Contolador agora tem uma instancia do departamento
-    private void setDepartment(Department entity){
+    public void setDepartment(Department entity){
         this.entity = entity;
     }
 
@@ -58,11 +58,11 @@ public class DepartmentFormController implements Initializable {
 
     }
 
-    private void updateFormData(){
+    public void updateFormData(){
         if (entity == null){
             throw new IllegalStateException("Entidade nula");
         }
-        
+
         txtId.setText(String.valueOf(entity.getId()));
         txtName.setText(entity.getName());
     }
