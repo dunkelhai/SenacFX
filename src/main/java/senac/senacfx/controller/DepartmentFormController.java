@@ -7,7 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import senac.senacfx.db.DbException;
 import senac.senacfx.gui.util.Constraints;
+import senac.senacfx.gui.util.Utils;
 import senac.senacfx.model.entities.Department;
+import senac.senacfx.model.services.DepartmentService;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,6 +17,8 @@ import java.util.ResourceBundle;
 public class DepartmentFormController implements Initializable {
 
     private Department entity;
+
+    private DepartmentService service;
 
     @FXML
     private TextField txtId;
@@ -36,9 +40,23 @@ public class DepartmentFormController implements Initializable {
         this.entity = entity;
     }
 
+    public void setDepartmentService(DepartmentService service){
+        this.service = service;
+    }
+
     @FXML
     public void onBtSaveAction() {
-        System.out.println("onBtSaveAction");
+        entity = getFormData();
+        service.saveOrUpdate(entity);
+    }
+
+    private Department getFormData() {
+        Department obj = new Department();
+
+        obj.setId(Utils.tryParseToInt(txtId.getText()));
+        obj.setName(txtName.getText());
+
+        return obj;
     }
 
     @FXML
