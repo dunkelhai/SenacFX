@@ -171,11 +171,11 @@ public class SellerFormController implements Initializable {
 
         txtBaseSalary.setText(String.format("%.2f", entity.getBaseSalary()));
 
-        if (entity.getDepartment() != null) {
-            comboBoxDepartment.setValue(entity.getDepartment());
-        } else {
+        if (entity.getDepartment() == null) {
             comboBoxDepartment.getSelectionModel().selectFirst();
         }
+        comboBoxDepartment.setValue(entity.getDepartment());
+
 
     }
 
