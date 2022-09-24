@@ -1,14 +1,18 @@
 package senac.senacfx.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.Callback;
 import senac.senacfx.db.DbException;
 import senac.senacfx.gui.listeners.DataChangeListener;
 import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.gui.util.Constraints;
 import senac.senacfx.gui.util.Utils;
+import senac.senacfx.model.entities.Department;
 import senac.senacfx.model.entities.Seller;
 import senac.senacfx.model.exceptions.ValidationException;
 import senac.senacfx.model.services.DepartmentService;
@@ -43,6 +47,9 @@ public class SellerFormController implements Initializable {
 
     @FXML
     private TextField txtBaseSalary;
+
+    @FXML
+    private ComboBox<Department> comboBoxDepartment;
     @FXML
     private Label labelErrorName;
 
@@ -60,6 +67,8 @@ public class SellerFormController implements Initializable {
 
     @FXML
     private Button btCancel;
+
+    private ObservableList<Department> obsList;
 
     //Contolador agora tem uma instancia do departamento
     public void setSeller(Seller entity){
@@ -140,6 +149,8 @@ public class SellerFormController implements Initializable {
         Constraints.setTextFieldMaxLength(txtEmail, 60);
         Utils.formatDatePicker(dpBirthDate, "dd/MM/yyyy");
 
+        initializeComboBoxDepartment();
+
     }
 
     public void updateFormData(){
@@ -157,12 +168,35 @@ public class SellerFormController implements Initializable {
         txtBaseSalary.setText(String.format("%.2f", entity.getBaseSalary()));
     }
 
+    public void loadAssociatedObjects(){
+
+        if (departmentService == null){
+            throw new IllegalStateException("DepartmentService was null");
+        }
+
+        List<Department> list = departmentService.findAll();
+        obsList = FXCollections.observableArrayList(list);
+        comboBoxDepartment.setItems(obsList);
+    }
+
     private void setErrorMessages(Map<String, String> errors){
         Set<String> fields = errors.keySet();
 
         if (fields.contains("name")){
             labelErrorName.setText(errors.get("name"));
         }
+    }
+
+    private void initializeComboBoxDepartment() {
+        Callback<ListView<Department>, ListCell<Department>> factory = lv -> new ListCell<Department>() {
+            @Override
+            protected void updateItem(Department item, boolean empty) {
+                super.updateItem(item, empty);
+                setText(empty ? "" : item.getName());
+            }
+        };
+        comboBoxDepartment.setCellFactory(factory);
+        comboBoxDepartment.setButtonCell(factory.call(null));
     }
 
 }
