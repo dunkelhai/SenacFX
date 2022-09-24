@@ -147,7 +147,9 @@ public class SellerFormController implements Initializable {
         txtName.setText(entity.getName());
         txtEmail.setText(entity.getEmail());
         Locale.setDefault(Locale.US);
-        dpBirthDate.setValue(LocalDate.ofInstant(entity.getBirthDate().toInstant(), ZoneId.systemDefault()));
+        if (entity.getBirthDate() != null) {
+            dpBirthDate.setValue(LocalDate.ofInstant(entity.getBirthDate().toInstant(), ZoneId.systemDefault()));
+        }
         txtBaseSalary.setText(String.format("%.2f", entity.getBaseSalary()));
     }
 
