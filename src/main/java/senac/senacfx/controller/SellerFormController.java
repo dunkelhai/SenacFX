@@ -212,30 +212,11 @@ public class SellerFormController implements Initializable {
     private void setErrorMessages(Map<String, String> errors){
         Set<String> fields = errors.keySet();
 
-        if (fields.contains("name")){
-            labelErrorName.setText(errors.get("name"));
-        } else {
-            labelErrorName.setText("");
-        }
-
-        if (fields.contains("email")){
-            labelErrorEmail.setText(errors.get("email"));
-        } else {
-            labelErrorEmail.setText("");
-        }
-
-        if (fields.contains("baseSalary")){
-            labelErrorBaseSalary.setText(errors.get("baseSalary"));
-        } else {
-            labelErrorBaseSalary.setText("");
-        }
-
-        if (fields.contains("birthDate")){
-            labelErrorBirthDate.setText(errors.get("birthDate"));
-        } else {
-            labelErrorBirthDate.setText("");
-        }
-
+        labelErrorName.setText((fields.contains("name") ? errors.get("name") : ""));
+        labelErrorEmail.setText((fields.contains("email") ? errors.get("email") : ""));
+        labelErrorBirthDate.setText((fields.contains("birthDate") ? errors.get("birthDate") : ""));
+        labelErrorBaseSalary.setText((fields.contains("baseSalary") ? errors.get("baseSalary") : ""));
+        
     }
 
     private void initializeComboBoxDepartment() {
