@@ -1,0 +1,3 @@
+Rodar na raiz do projeto:
+
+mvn clean javafx:run
