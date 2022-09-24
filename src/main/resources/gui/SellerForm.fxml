@@ -52,10 +52,13 @@
             <Label text="Birth Date" GridPane.rowIndex="3" />
             <Label text="Base Salary" GridPane.rowIndex="4" />
             <Label text="Departmen" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtBaseSalary" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <DatePicker GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <DatePicker fx:id="dpBirthDate" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="labelErrorEmail" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="labelErrorBirthDate" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="labelErrorBaseSalary" textAlignment="CENTER" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </children>

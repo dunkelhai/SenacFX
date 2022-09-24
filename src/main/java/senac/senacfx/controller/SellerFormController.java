@@ -14,6 +14,8 @@ import senac.senacfx.model.exceptions.ValidationException;
 import senac.senacfx.model.services.SellerService;
 
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.*;
 
 public class SellerFormController implements Initializable {
@@ -129,7 +131,10 @@ public class SellerFormController implements Initializable {
 
     private void initializeNodes() {
         Constraints.setTextFieldInteger(txtId);
-        Constraints.setTextFieldMaxLength(txtName, 30);
+        Constraints.setTextFieldMaxLength(txtName, 70);
+        Constraints.setTextFieldDouble(txtBaseSalary);
+        Constraints.setTextFieldMaxLength(txtEmail, 60);
+        Utils.formatDatePicker(dpBirthDate, "dd/MM/yyyy");
 
     }
 
@@ -140,6 +145,10 @@ public class SellerFormController implements Initializable {
 
         txtId.setText(String.valueOf(entity.getId()));
         txtName.setText(entity.getName());
+        txtEmail.setText(entity.getEmail());
+        Locale.setDefault(Locale.US);
+        dpBirthDate.setValue(LocalDate.ofInstant(entity.getBirthDate().toInstant(), ZoneId.systemDefault()));
+        txtBaseSalary.setText(String.format("%.2f", entity.getBaseSalary()));
     }
 
     private void setErrorMessages(Map<String, String> errors){
