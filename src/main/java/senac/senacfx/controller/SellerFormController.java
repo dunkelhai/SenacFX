@@ -142,6 +142,7 @@ public class SellerFormController implements Initializable {
         }
         obj.setBaseSalary(Utils.tryParseToDouble(txtBaseSalary.getText()));
 
+        obj.setDepartment(comboBoxDepartment.getValue());
 
         if (exception.getErrors().size() > 0){
             throw exception;
@@ -216,7 +217,7 @@ public class SellerFormController implements Initializable {
         labelErrorEmail.setText((fields.contains("email") ? errors.get("email") : ""));
         labelErrorBirthDate.setText((fields.contains("birthDate") ? errors.get("birthDate") : ""));
         labelErrorBaseSalary.setText((fields.contains("baseSalary") ? errors.get("baseSalary") : ""));
-        
+
     }
 
     private void initializeComboBoxDepartment() {
