@@ -173,9 +173,9 @@ public class SellerFormController implements Initializable {
 
         if (entity.getDepartment() == null) {
             comboBoxDepartment.getSelectionModel().selectFirst();
+        } else {
+            comboBoxDepartment.setValue(entity.getDepartment());
         }
-        comboBoxDepartment.setValue(entity.getDepartment());
-
 
     }
 
