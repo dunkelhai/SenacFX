@@ -13,6 +13,7 @@ import javafx.scene.layout.VBox;
 import senac.senacfx.application.Main;
 import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.model.services.DepartmentService;
+import senac.senacfx.model.services.SellerService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,7 +31,10 @@ public class MainViewController implements Initializable {
 
     @FXML
     public void onMenuItemSellerAction(){
-        System.out.println("onMenuItemSellerAction");
+        loadView("/gui/SellerList.fxml", (SellerListController controller) -> {
+            controller.setSellerService(new SellerService());
+            controller.updateTableView();
+        });
     }
 
     @FXML
