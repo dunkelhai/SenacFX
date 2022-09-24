@@ -130,8 +130,12 @@ public class SellerFormController implements Initializable {
         }
         obj.setEmail(txtEmail.getText());
 
-        Instant instant = Instant.from(dpBirthDate.getValue().atStartOfDay(ZoneId.systemDefault()));
-        obj.setBirthDate(Date.from(instant));
+        if (dpBirthDate.getValue() == null){
+            exception.addError("birthDate", "data nao selecionada");
+        } else {
+            Instant instant = Instant.from(dpBirthDate.getValue().atStartOfDay(ZoneId.systemDefault()));
+            obj.setBirthDate(Date.from(instant));
+        }
 
         if (txtBaseSalary.getText() == null || txtBaseSalary.getText().trim().equals("")){
             exception.addError("baseSalary", "campo nao pode ser vazio");
@@ -210,7 +214,28 @@ public class SellerFormController implements Initializable {
 
         if (fields.contains("name")){
             labelErrorName.setText(errors.get("name"));
+        } else {
+            labelErrorName.setText("");
         }
+
+        if (fields.contains("email")){
+            labelErrorEmail.setText(errors.get("email"));
+        } else {
+            labelErrorEmail.setText("");
+        }
+
+        if (fields.contains("baseSalary")){
+            labelErrorBaseSalary.setText(errors.get("baseSalary"));
+        } else {
+            labelErrorBaseSalary.setText("");
+        }
+
+        if (fields.contains("birthDate")){
+            labelErrorBirthDate.setText(errors.get("birthDate"));
+        } else {
+            labelErrorBirthDate.setText("");
+        }
+
     }
 
     private void initializeComboBoxDepartment() {
