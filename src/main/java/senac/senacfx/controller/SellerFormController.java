@@ -19,6 +19,7 @@ import senac.senacfx.model.services.DepartmentService;
 import senac.senacfx.model.services.SellerService;
 
 import java.net.URL;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.*;
@@ -123,6 +124,20 @@ public class SellerFormController implements Initializable {
             exception.addError("name", "campo nao pode ser vazio");
         }
         obj.setName(txtName.getText());
+
+        if (txtEmail.getText() == null || txtEmail.getText().trim().equals("")){
+            exception.addError("email", "campo nao pode ser vazio");
+        }
+        obj.setEmail(txtEmail.getText());
+
+        Instant instant = Instant.from(dpBirthDate.getValue().atStartOfDay(ZoneId.systemDefault()));
+        obj.setBirthDate(Date.from(instant));
+
+        if (txtBaseSalary.getText() == null || txtBaseSalary.getText().trim().equals("")){
+            exception.addError("baseSalary", "campo nao pode ser vazio");
+        }
+        obj.setBaseSalary(Utils.tryParseToDouble(txtBaseSalary.getText()));
+
 
         if (exception.getErrors().size() > 0){
             throw exception;
