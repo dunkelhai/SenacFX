@@ -19,6 +19,7 @@ import senac.senacfx.gui.listeners.DataChangeListener;
 import senac.senacfx.gui.util.Alerts;
 import senac.senacfx.gui.util.Utils;
 import senac.senacfx.model.entities.Seller;
+import senac.senacfx.model.services.DepartmentService;
 import senac.senacfx.model.services.SellerService;
 
 import java.io.IOException;
@@ -114,7 +115,7 @@ public class SellerListController implements Initializable, DataChangeListener {
 
             SellerFormController controller = loader.getController();
             controller.setSeller(obj);
-            controller.setSellerService(new SellerService());
+            controller.setServices(new SellerService(), new DepartmentService());
             controller.subscribeDataChangeListener(this);
             controller.updateFormData();
 

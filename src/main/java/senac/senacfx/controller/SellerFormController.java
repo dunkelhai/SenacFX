@@ -11,6 +11,7 @@ import senac.senacfx.gui.util.Constraints;
 import senac.senacfx.gui.util.Utils;
 import senac.senacfx.model.entities.Seller;
 import senac.senacfx.model.exceptions.ValidationException;
+import senac.senacfx.model.services.DepartmentService;
 import senac.senacfx.model.services.SellerService;
 
 import java.net.URL;
@@ -23,6 +24,8 @@ public class SellerFormController implements Initializable {
     private Seller entity;
 
     private SellerService service;
+
+    private DepartmentService departmentService;
 
     private List<DataChangeListener> dataChangeListeners = new ArrayList<>();
 
@@ -63,8 +66,9 @@ public class SellerFormController implements Initializable {
         this.entity = entity;
     }
 
-    public void setSellerService(SellerService service){
+    public void setServices(SellerService service, DepartmentService departmentService){
         this.service = service;
+        this.departmentService = departmentService;
     }
 
     public void subscribeDataChangeListener(DataChangeListener listener) {
