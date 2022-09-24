@@ -154,6 +154,7 @@ public class SellerFormController implements Initializable {
     }
 
     public void updateFormData(){
+
         if (entity == null){
             throw new IllegalStateException("Entidade nula");
         }
@@ -161,11 +162,21 @@ public class SellerFormController implements Initializable {
         txtId.setText(String.valueOf(entity.getId()));
         txtName.setText(entity.getName());
         txtEmail.setText(entity.getEmail());
+
         Locale.setDefault(Locale.US);
+
         if (entity.getBirthDate() != null) {
             dpBirthDate.setValue(LocalDate.ofInstant(entity.getBirthDate().toInstant(), ZoneId.systemDefault()));
         }
+
         txtBaseSalary.setText(String.format("%.2f", entity.getBaseSalary()));
+
+        if (entity.getDepartment() != null) {
+            comboBoxDepartment.setValue(entity.getDepartment());
+        } else {
+            comboBoxDepartment.getSelectionModel().selectFirst();
+        }
+
     }
 
     public void loadAssociatedObjects(){
