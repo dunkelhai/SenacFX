@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="519.0" prefWidth="693.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.AboutController">
+<VBox prefHeight="519.0" prefWidth="693.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.AboutController">
          <children>
             <Label prefHeight="36.0" prefWidth="68.0" styleClass="label-sobre" text="Sobre">
                <font>

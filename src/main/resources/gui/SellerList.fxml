@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="300.0" maxWidth="800.0" minHeight="300.0" minWidth="800.0" prefHeight="300.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.SellerListController">
+<VBox maxHeight="300.0" maxWidth="800.0" minHeight="300.0" minWidth="800.0" prefHeight="300.0" prefWidth="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.SellerListController">
          <children>
             <Label text="Registro de Vendedores">
                <font>
