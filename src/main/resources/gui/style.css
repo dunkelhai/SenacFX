@@ -1,0 +1,72 @@
+.root
+{
+    -fx-border-color: blue;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-border-insets: 5px;
+    -fx-padding: 10px;
+    -fx-spacing: 5px;
+    -fx-background-color: lightgray;
+    -fx-background-insets: 5px;
+}
+
+.button-style-yes
+{
+    -fx-border-color: black;
+    -fx-border-width: 5;
+    -fx-border-radius: 0;
+    -fx-border-insets: 0;
+    -fx-border-style: solid line-join bevel line-cap square;
+}
+.button-style-no
+{
+   -fx-background-color: red;
+}
+
+.button-style-cancel
+{
+    -fx-border-color: red black red black;
+    -fx-border-width: 5;
+    -fx-border-radius: 0;
+    -fx-border-insets: 0;
+    -fx-border-style: solid line-join bevel line-cap round;
+}
+
+.button
+{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-background-color: gray;
+    -fx-background-insets: 5;
+    -fx-background-radius: 10;
+}
+
+.button-new
+{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-color: blue;
+    -fx-background-insets: 3;
+    -fx-background-radius: 5;
+}
+
+.label
+{
+    -fx-font-family: "arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: bolder;
+}
+
+.label-error
+{
+    -fx-font-family: "arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: bolder;
+}
+
+.label-sobre
+{
+    -fx-font-family: "arial";
+    -fx-font-size: 14px;
+    -fx-font-weight: bolder;
+}

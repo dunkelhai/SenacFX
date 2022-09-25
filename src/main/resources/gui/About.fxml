@@ -2,16 +2,16 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox prefHeight="326.0" prefWidth="513.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.AboutController">
+<VBox prefHeight="519.0" prefWidth="693.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.AboutController">
          <children>
-            <Label text="About">
+            <Label prefHeight="36.0" prefWidth="68.0" styleClass="label-sobre" text="Sobre">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
                <VBox.margin>
                   <Insets />
@@ -20,10 +20,26 @@
                   <Insets bottom="10.0" left="20.0" top="10.0" />
                </padding>
             </Label>
-            <Label text="JavaFX application demo">
-               <padding>
-                  <Insets left="20.0" />
-               </padding>
-            </Label>
+      <Text fill="#001eff" strokeType="OUTSIDE" strokeWidth="0.0" text="Template desenvolvido como modelo para os alunos do SENAC." textAlignment="CENTER" wrappingWidth="618.68701171875">
+         <VBox.margin>
+            <Insets left="20.0" right="20.0" top="50.0" />
+         </VBox.margin>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Aqui pode ser colocado informações sobre o desenvolvimento dessa aplicação e os créditos aos desenvolvedores." textAlignment="CENTER" wrappingWidth="618.68701171875">
+         <VBox.margin>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="100.0" />
+         </VBox.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextArea prefHeight="173.0" prefWidth="659.0" text="CRUD feito usando:&#10;&#10;- Java&#10;- JavaFX&#10;- IntelliJ&#10;- MySQL&#10;- CSS&#10;- Git&#10;- GitHub">
+         <padding>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </TextArea>
          </children>
 </VBox>
