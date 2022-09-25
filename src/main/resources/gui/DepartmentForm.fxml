@@ -10,8 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane prefHeight="184.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.DepartmentFormController">
+<AnchorPane prefHeight="184.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.DepartmentFormController">
    <children>
       <GridPane layoutX="39.0" layoutY="37.0" prefHeight="94.0" prefWidth="528.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="20.0">
         <columnConstraints>
@@ -26,18 +25,18 @@
         </rowConstraints>
          <children>
             <Label text="Id" />
-            <Label text="Name" GridPane.rowIndex="1" />
+            <Label text="Nome" GridPane.rowIndex="1" />
             <TextField fx:id="txtId" editable="false" GridPane.columnIndex="1" />
             <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label fx:id="labelErrorName" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button fx:id="btSave" mnemonicParsing="false" onAction="#onBtSaveAction" text="Save">
+                  <Button fx:id="btSave" mnemonicParsing="false" onAction="#onBtSaveAction" text="Salvar">
                      <HBox.margin>
                         <Insets top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btCancel" mnemonicParsing="false" onAction="#onBtCancelAction" text="Cancel">
+                  <Button fx:id="btCancel" mnemonicParsing="false" onAction="#onBtCancelAction" styleClass="button-style-no" text="Cancelar">
                      <HBox.margin>
                         <Insets top="5.0" />
                      </HBox.margin>

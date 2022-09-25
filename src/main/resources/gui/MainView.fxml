@@ -1,30 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="senac.senacfx.controller.MainViewController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="senac.senacfx.controller.MainViewController">
     <content>
-        <VBox prefHeight="326.0" prefWidth="513.0">
+        <VBox prefHeight="405.0" prefWidth="566.0">
             <children>
                 <MenuBar>
                     <menus>
-                        <Menu mnemonicParsing="false" text="Registration">
+                        <Menu mnemonicParsing="false" text="Registrar">
                             <items>
-                                <MenuItem fx:id="menuItemSeller" mnemonicParsing="false" onAction="#onMenuItemSellerAction" text="Seller" />
-                                <MenuItem fx:id="menuItemDepartment" mnemonicParsing="false" onAction="#onMenuItemDepartmentAction" text="Departments" />
+                                <MenuItem fx:id="menuItemSeller" mnemonicParsing="false" onAction="#onMenuItemSellerAction" text="Vendedor" />
+                                <MenuItem fx:id="menuItemDepartment" mnemonicParsing="false" onAction="#onMenuItemDepartmentAction" text="Departamentos" />
                             </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Help">
+                        <Menu mnemonicParsing="false" text="Informações">
                             <items>
-                                <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="About" />
+                                <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#onMenuItemAboutAction" text="Sobre" />
                             </items>
                         </Menu>
                     </menus>
                 </MenuBar>
+            <TextField alignment="CENTER" editable="false" prefHeight="44.0" prefWidth="566.0" text="PROJETO SENAC 2022">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <ImageView fitHeight="200.0" fitWidth="200.0">
+               <image>
+                  <Image url="@../esdeath.jpg" />
+               </image>
+               <VBox.margin>
+                  <Insets left="160.0" top="30.0" />
+               </VBox.margin>
+            </ImageView>
             </children>
         </VBox>
     </content>
