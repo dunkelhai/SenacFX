@@ -1,0 +1,3 @@
+Se for rodar no Eclipse IDE, provavelmente precisará por as VM Arguments na hora de rodar:
+
+--module-path C:\java-libs\javafx-sdk\lib --add-modules=javafx.fxml,javafx.controls
