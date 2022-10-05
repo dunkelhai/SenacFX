@@ -50,6 +50,7 @@
                </VBox.margin>
             </ImageView>
             </children>
+            
         </VBox>
     </content>
 </ScrollPane>
