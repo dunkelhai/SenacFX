@@ -49,6 +49,7 @@
                   <Insets left="160.0" top="30.0" />
                </VBox.margin>
             </ImageView>
+                
             </children>
         </VBox>
     </content>
