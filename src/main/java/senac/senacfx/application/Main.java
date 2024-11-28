@@ -37,6 +37,7 @@ public class Main extends Application {
         return mainScene;
     }
     public static void main(String[] args) {
+        System.out.println("teste");
         launch(args);
     }
 }
